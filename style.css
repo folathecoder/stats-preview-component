@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  background-color: #090b1a;
+  font-size: 1rem;
+  line-height: 1.66667rem;
+  font-family: "Lexend Deca", sans-serif;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 400;
+}
+
+.card {
+  max-width: 40rem;
+  min-height: 26.66667rem;
+  margin: 4.66667rem auto;
+  background-color: #1b1938;
+  border-radius: 0.66667rem;
+}
+
+.card__image {
+  max-width: 100%;
+  min-height: 16rem;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  min-height: 16rem;
+  background-image: url(images/image-header-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.66667rem 0.66667rem 0rem 0rem;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(86, 35, 118, 0.726);
+  border-radius: 0.66667rem 0.66667rem 0rem 0rem;
+  z-index: 1000;
+}
+
+.card__content {
+  padding: 3.33333rem 1.33333rem 2.66667rem 1.33333rem;
+  text-align: center;
+}
+
+.card__content-info {
+  margin-bottom: 1.33333rem;
+}
+
+.card__content-info h2 {
+  font-size: 1.86667rem;
+  line-height: 2.2rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.card__content-stat {
+  min-height: 6.66667rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card__content-stat > * {
+  padding: 0.66667rem 0rem;
+}
+
+.highlight {
+  color: #aa5cdb;
+}
+
+.stat span {
+  display: block;
+  font-size: 1.66667rem;
+  line-height: 2.33333rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: white;
+}
+
+.stat p {
+  font-size: 0.86667rem;
+}
+/*# sourceMappingURL=style.css.map */

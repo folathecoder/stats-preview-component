@@ -1,0 +1,162 @@
+//* Convert pixel to rem automatically
+@function rem($size) {
+    $remSize: $size / 15;
+    @return #{$remSize}rem;
+}
+//*Media queries: Mixins
+@mixin media-query ($size) {
+    @if $size == desktop {
+        @media screen and (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $size == tablet {
+        @media screen and (min-width: 992px) {
+            @content;
+        }
+    } 
+    @else if $size == tablet-mini {
+        @media screen and (min-width: 786px) {
+            @content;
+        }
+    } 
+    @else if $size == large-mobile {
+        @media screen and (min-width: 602px) {
+            @content;
+        }
+    } 
+    @else if $size == mobile {
+        @media screen and (min-width: 300px) {
+            @content;
+        }
+    } 
+    @else if $size == mobile-mini {
+      @media screen and (min-width: 300px) {
+          @content;
+      }
+  } 
+}
+
+//* Colors
+$color-bg-body: hsl(233, 47%, 7%);
+$color-bg-card: hsl(244, 38%, 16%);
+$color-text-highlight: hsl(277, 64%, 61%);
+$color-neutral: hsl(0, 0%, 100%);
+$color-paragraph: hsla(0, 0%, 100%, 0.75);
+$color-stats-heading: hsla(0, 0%, 100%, 0.6);
+
+//* Font Family
+$font-primary: 'Inter', sans-serif;
+$font-secondary: 'Lexend Deca', sans-serif;
+
+//* Font Weight
+$weight-regular: 400;
+$weight-bold: 700;
+
+//* Border Radius
+$radius-mobile: rem(10) rem(10) rem(0) rem(0);
+// ------------------------
+//! CSS BASE RESET
+* {
+    margin: 0;
+    padding: 0;
+}
+
+//* Set core root defaults
+html:focus-within {
+    scroll-behavior: smooth;
+}
+img {
+    display: block;
+    width: 100%;
+}
+body {
+    max-width: 100%;
+    min-height: 100vh;
+    padding: rem(15);
+    background-color: $color-bg-body;
+    font-size: rem(15);
+    line-height: rem(25);
+    font-family: $font-secondary;
+    color: $color-paragraph;
+    font-weight: $weight-regular;
+}
+
+p {
+
+}
+//TODO: MAIN STYLING
+
+.card {
+    max-width: rem(600);
+    min-height: rem(400);
+    margin: rem(70) auto;
+    background-color: $color-bg-card;
+    border-radius: rem(10);
+
+    &__image {
+        max-width: 100%;
+        min-height: rem(240);
+        position: relative;
+    }
+}
+.image {
+    width: 100%;
+    min-height: rem(240);
+    background-image: url(images/image-header-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $radius-mobile;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(277, 54%, 30%, 0.726);
+    border-radius: $radius-mobile;
+    z-index: 1000;
+}
+
+.card__content {
+    // background-color: red;
+    padding: rem(50) rem(20) rem(40) rem(20);
+    text-align: center;
+
+    &-info {
+        margin-bottom: rem(20);
+
+        h2 {
+            font-size: rem(28);
+            line-height: rem(33);
+            margin-bottom: rem(15);
+            color: $color-neutral;
+            font-family: $font-primary;
+            font-weight: $weight-bold;
+        }
+    }
+    &-stat {
+        min-height: rem(100);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        & > * {
+            padding: rem(10) rem(0);
+        }
+    }
+}
+.highlight {
+    color: $color-text-highlight;
+}
+.stat span {
+    display: block;
+    font-size: rem(25);
+    line-height: rem(35);
+    font-family: $font-primary;
+    font-weight: $weight-bold;
+    color: $color-neutral;
+}
+.stat p {
+    font-size: rem(13);
+}
