@@ -50,11 +50,13 @@ $weight-bold: 700;
 
 //* Border Radius
 $radius-mobile: rem(10) rem(10) rem(0) rem(0);
+$radius-desktop: rem(0) rem(10) rem(10) rem(0);
 // ------------------------
 //! CSS BASE RESET
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 //* Set core root defaults
@@ -75,6 +77,8 @@ body {
     font-family: $font-secondary;
     color: $color-paragraph;
     font-weight: $weight-regular;
+    display: grid;
+    place-items: center;
 }
 
 //TODO: MAIN STYLING
@@ -85,11 +89,21 @@ body {
     margin: rem(70) auto;
     background-color: $color-bg-card;
     border-radius: rem(10);
+    @include media-query(desktop) {
+        max-width: rem(1000);
+        min-height: rem(0);
+        display: flex;
+        flex-direction: row-reverse;
+    }
 
     &__image {
+        flex: 1 rem(500);
         max-width: 100%;
         min-height: rem(240);
         position: relative;
+        @include media-query(desktop) {
+            min-height: 100%;
+        }
     }
 }
 .image {
@@ -99,20 +113,42 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: $radius-mobile;
+    @include media-query(desktop) {
+        // width: 100%;
+        min-height: 100%;
+        background-image: url(images/image-header-desktop.jpg);
+        background-size: cover;
+        border-radius: rem(0) rem(10) rem(10) rem(0);
+    }
 }
 .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: hsla(277, 54%, 30%, 0.726);
+    background-color: hsla(277, 77%, 32%, 0.637);
+    // background-color: hsla(277, 54%, 30%, 0.726);
     border-radius: $radius-mobile;
     z-index: 1000;
+    @include media-query(desktop) {
+        border-radius: $radius-desktop;
+    }
+
+    &:hover {
+        transition: 1s;
+        background-color: transparent;
+    }
 }
 
 .card__content {
+    flex: 1 rem(500);
     // background-color: red;
     padding: rem(50) rem(20) rem(40) rem(20);
     text-align: center;
+
+    @include media-query(desktop) {
+        text-align: left;
+        padding: rem(50) rem(100) rem(50) rem(50);
+    }
 
     &-info {
         margin-bottom: rem(20);
@@ -124,17 +160,36 @@ body {
             color: $color-neutral;
             font-family: $font-primary;
             font-weight: $weight-bold;
+
+            @include media-query(desktop) {
+                font-size: rem(30);
+                line-height: rem(42);
+                margin-bottom: rem(25);
+            }
         }
     }
     &-stat {
         min-height: rem(100);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
 
+        @include media-query(desktop) {
+            // flex-direction: row;
+            flex-wrap: nowrap;
+            min-height: rem(0);
+            justify-content: flex-start;
+            margin-top: rem(50);
+        }
+
         & > * {
+            flex: 1 rem(140);
             padding: rem(10) rem(0);
+            @include media-query(desktop) {
+                padding: rem(10) rem(45) rem(0) rem(0);
+            }
         }
     }
 }
@@ -148,6 +203,10 @@ body {
     font-family: $font-primary;
     font-weight: $weight-bold;
     color: $color-neutral;
+    @include media-query(desktop) {
+        font-size: rem(20);
+        line-height: rem(30);
+    }
 }
 .stat p {
     font-size: rem(13);
