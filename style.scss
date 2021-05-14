@@ -51,7 +51,8 @@ $weight-bold: 700;
 //* Border Radius
 $radius-mobile: rem(10) rem(10) rem(0) rem(0);
 $radius-desktop: rem(0) rem(10) rem(10) rem(0);
-// ------------------------
+
+
 //! CSS BASE RESET
 * {
     margin: 0;
@@ -80,6 +81,19 @@ body {
     display: grid;
     place-items: center;
 }
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+            clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+  }
 
 //TODO: MAIN STYLING
 
@@ -95,7 +109,6 @@ body {
         display: flex;
         flex-direction: row-reverse;
     }
-
     &__image {
         flex: 1 rem(500);
         max-width: 100%;
@@ -114,7 +127,6 @@ body {
     background-size: cover;
     border-radius: $radius-mobile;
     @include media-query(desktop) {
-        // width: 100%;
         min-height: 100%;
         background-image: url(images/image-header-desktop.jpg);
         background-size: cover;
@@ -126,33 +138,26 @@ body {
     width: 100%;
     height: 100%;
     background-color: hsla(277, 77%, 32%, 0.637);
-    // background-color: hsla(277, 54%, 30%, 0.726);
     border-radius: $radius-mobile;
     z-index: 1000;
     @include media-query(desktop) {
         border-radius: $radius-desktop;
     }
-
     &:hover {
         transition: 1s;
         background-color: transparent;
     }
 }
-
 .card__content {
     flex: 1 rem(500);
-    // background-color: red;
     padding: rem(50) rem(20) rem(40) rem(20);
     text-align: center;
-
     @include media-query(desktop) {
         text-align: left;
         padding: rem(50) rem(100) rem(50) rem(50);
     }
-
     &-info {
         margin-bottom: rem(20);
-
         h2 {
             font-size: rem(28);
             line-height: rem(33);
@@ -160,7 +165,6 @@ body {
             color: $color-neutral;
             font-family: $font-primary;
             font-weight: $weight-bold;
-
             @include media-query(desktop) {
                 font-size: rem(30);
                 line-height: rem(42);
@@ -175,15 +179,12 @@ body {
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-
         @include media-query(desktop) {
-            // flex-direction: row;
             flex-wrap: nowrap;
             min-height: rem(0);
             justify-content: flex-start;
             margin-top: rem(50);
         }
-
         & > * {
             flex: 1 rem(140);
             padding: rem(10) rem(0);
