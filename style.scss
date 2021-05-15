@@ -140,6 +140,7 @@ body {
     background-color: hsla(277, 77%, 32%, 0.637);
     border-radius: $radius-mobile;
     z-index: 1000;
+    transition: 2s;
     @include media-query(desktop) {
         border-radius: $radius-desktop;
     }
