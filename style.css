@@ -105,20 +105,12 @@ body {
   background-color: rgba(96, 19, 144, 0.637);
   border-radius: 0.66667rem 0.66667rem 0rem 0rem;
   z-index: 1000;
-  -webkit-transition: 2s;
-  transition: 2s;
 }
 
 @media screen and (min-width: 1200px) {
   .overlay {
     border-radius: 0rem 0.66667rem 0.66667rem 0rem;
   }
-}
-
-.overlay:hover {
-  -webkit-transition: 1s;
-  transition: 1s;
-  background-color: transparent;
 }
 
 .card__content {
@@ -223,5 +215,6 @@ body {
 
 .stat p {
   font-size: 0.86667rem;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=style.css.map */

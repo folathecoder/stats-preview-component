@@ -140,13 +140,8 @@ body {
     background-color: hsla(277, 77%, 32%, 0.637);
     border-radius: $radius-mobile;
     z-index: 1000;
-    transition: 2s;
     @include media-query(desktop) {
         border-radius: $radius-desktop;
-    }
-    &:hover {
-        transition: 1s;
-        background-color: transparent;
     }
 }
 .card__content {
@@ -212,4 +207,5 @@ body {
 }
 .stat p {
     font-size: rem(13);
+    text-transform: uppercase;
 }
